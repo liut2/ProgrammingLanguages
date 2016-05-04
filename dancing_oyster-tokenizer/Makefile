@@ -1,11 +1,11 @@
 CC = clang
 CFLAGS = -g
 
-SRCS = linkedlist.c main.c talloc.c
-HDRS = linkedlist.h value.h talloc.h
+SRCS = linkedlist.c main.c talloc.c tokenizer.c
+HDRS = linkedlist.h value.h talloc.h tokenizer.h
 OBJS = $(SRCS:.c=.o)
 
-talloctest: $(OBJS)
+tokenizer: $(OBJS)
 	$(CC)  $(CFLAGS) $^  -o $@
 
 %.o : %.c $(HDRS)
@@ -13,4 +13,4 @@ talloctest: $(OBJS)
 
 clean:
 	rm *.o
-	rm talloctest
+	rm tokenizer
